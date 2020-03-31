@@ -1,0 +1,76 @@
+\documentclass{beamer}
+\usepackage[bgColor=slideOrange]{./lib/slides}
+\usepackage{lipsum}
+\pdfcompresslevel=9
+\pdfobjcompresslevel=3
+
+\title[Insert Title (short version of title)]{Insert Presentation Title Here}
+
+%\author[Short~Name]{First~Name}
+\author[Short~Name]{%
+	{\rm First~Name}\\
+	{\it name@institute.com}
+}
+%\author[Short~Name]{%
+%	{\rm Ruohong~Jiao\inst{1}}%
+%	\and%
+%	{\rm Second~Name\inst{2}}%
+%}
+%\institute{}
+\institute[Short~Institution]{First Institution}
+%\institute[Short Institution]{%
+%	{\it \inst{1}First Institution}%
+%	\and%
+%	{\it \inst{2}Second Institution}%
+%}
+
+\date{\today}
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+\bnote{This generates notes for pdfpc. These notes also appear on the handout/article versions.}
+
+\begin{frame}[t]{Header title bold}
+  Main body text Sans. Here is a way to \alert{highlight text}.
+  \label{sec:Test1}
+  \begin{itemize}
+  \item Bullet points
+  \item ...
+    \begin{itemize}
+    \item subitem
+    \end{itemize}
+  \item \lipsum[2]
+  \end{itemize}
+\end{frame}
+
+\bnote{This is a note for the first slide. Mention how }
+
+
+\begin{frame}{Inserting a figure, some maths...}
+  \begin{itemize}
+  \item   Here's a figure:
+    \begin{figure}[h]
+      \centering
+      \colorbox{blue}{\includegraphics[width=.13\linewidth]{./assets/img/logo}}
+      \caption{The Usher's big U logo}
+      \label{fig:big-u}
+    \end{figure}
+  \item 
+    And here's a famous equation:
+  \begin{eqnarray}
+    \label{eq:schroedinger}
+    i\hbar {\frac {\partial }{\partial t}}|\psi (t)\rangle ={\hat {H}}|\psi (t)\rangle
+  \end{eqnarray}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+	\begin{center}
+		{\fontsize{50}{60}\selectfont Thanks}
+	\end{center}
+\end{frame}
+
+\end{document}
