@@ -1,5 +1,10 @@
-\documentclass{beamer}
-\usepackage[bgColor=slideOrange]{./lib/slides}
+%\documentclass{beamer}
+%\documentclass[notes-only]{beamer}
+\documentclass[notes]{beamer}
+
+\usepackage[%
+	bgColor=slideOrange
+]{./lib/slides}
 \usepackage{lipsum}
 \pdfcompresslevel=9
 \pdfobjcompresslevel=3
@@ -33,17 +38,83 @@
 \end{frame}
 \bnote{This generates notes for pdfpc. These notes also appear on the handout/article versions.}
 
-\begin{frame}[t]{Header title bold}
-  Main body text Sans. Here is a way to \alert{highlight text}.
-  \label{sec:Test1}
-  \begin{itemize}
-  \item Bullet points
-  \item ...
-    \begin{itemize}
-    \item subitem
-    \end{itemize}
-  \item \lipsum[2]
+\begin{frame}{Beamer for UIC slides}
+\begin{itemize}
+\item This is an \emph{intermediate} tutorial/template. \hrefcol[slideGreen]{Here is one of many references available for learning LaTeX.}{http://en.wikibooks.org/wiki/LaTeX/}
+\item Beamer has also a detailed \hrefcol{user manual}{http://www.ctan.org/tex-archive/macros/latex/contrib/beamer/doc/beameruserguide.pdf}
+\item \hrefcol{This reference}{http://tug.ctan.org/macros/latex/contrib/beamer/doc/beameruserguide.pdf} seems pretty decent. It has a lot of good notes on presentations in general.
+\item \hrefcol{Overleaf tutorials}{https://www.overleaf.com/learn/latex/Beamer} are also \emph{really great} for learning \LaTeX.
+\item Math typesetting in \TeX\ is the best:
+\begin{equation*}
+\mathrm{i}\,\hslash\frac{\partial}{\partial t} \Psi(\mathbf{r},t) =
+-\frac{\hslash^2}{2\,m}\nabla^2\Psi(\mathbf{r},t)
++ V(\mathbf{r})\Psi(\mathbf{r},t)
+\end{equation*}
+\item Background colour: %
+		  \testcolor{slideOrange}, %
+		  \testcolor{slideBlue}, %
+		  \testcolor{slideGreen}.
+\end{itemize}
+\end{frame}
+
+\framecard[slideGreen]{%
+	\vfill
+	\textcolor{white}{A SECTION TITLE\\\vspace{3pt}WITH A CUSTOM COLOR}
+	\vfill
+}
+
+\framepic[0.8]{./assets/img/forest_trees_aerial_view_130608_2048x1152.jpg}{%
+	\vfill
+    \begin{flushright}
+    \textcolor{slideOrange}{%
+		\textbf{A SECTION TITLE\\\vspace{3pt}WITH A CUSTOM PICTURE}
+	}
+    \end{flushright}	
+}
+
+\begin{frame}[fragile]{Writing a Simple Slide}
+\framesubtitle{It's really easy!}
+\begin{block}{Code for an Itemised List}<+->
+\begin{verbatim}
+\begin{frame}
+  \begin{itemize}[<+->]
+    \item ...
   \end{itemize}
+\end{verbatim}
+\end{block}
+\end{frame}
+
+\begin{frame}[fragile]{Splitting in Columns}
+\begin{columns}
+\begin{column}{0.3\textwidth}
+	This is the first column\par
+\end{column}
+\begin{column}{0.4\textwidth}
+	This is the Second column\par
+	Second line\par
+\end{column}
+\begin{column}{0.3\textwidth}
+	This is the Third column\par
+	Second line\par
+	Third line\par
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}[t]{Header title bold}
+	Main body text Sans. Here is a way to \alert{highlight text}.
+	\label{sec:Test1}
+	\begin{itemize}
+		\item Bullet points
+		\item ...
+			\begin{itemize}
+				\item subitem
+					\begin{itemize}
+						\item subsubitem
+					\end{itemize}
+			\end{itemize}
+		\item \lipsum[2]
+	\end{itemize}
 \end{frame}
 
 \bnote{This is a note for the first slide. Mention how }
