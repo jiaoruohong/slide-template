@@ -7,7 +7,7 @@
 % Resolutions
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % ------------------------------------------------------------------------------
-% 4:3 (default)
+% 4:3
 % ------------------------------------------------------------------------------
 % 960x720 - 25.400x19.050
 % ------------------------------------------------------------------------------
@@ -17,7 +17,7 @@
 % authorSize		=\fontsize{20}{24},
 % instituteSize		=\fontsize{22}{26},
 % ------------------------------------------------------------------------------
-% 16:9
+% 16:9 (default)
 % ------------------------------------------------------------------------------
 % 1920x1080 - 50.800x28.575
 % ------------------------------------------------------------------------------
@@ -32,10 +32,10 @@
 % Options
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % page width
-\newcommand{\pageWidth}{25.400}
+\newcommand{\pageWidth}{50.800}
 \DeclareOptionBeamer{pWidth}{\renewcommand\pageWidth{#1}}
 % page height
-\newcommand{\pageHeight}{19.050}
+\newcommand{\pageHeight}{28.575}
 \DeclareOptionBeamer{pHeight}{\renewcommand\pageHeight{#1}}
 
 \ProcessOptionsBeamer
@@ -86,25 +86,77 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \pgfdeclareimage[height=0.10\paperheight]{institution}{assets/img/institution}
 \pgfdeclareimage[height=0.10\paperheight]{big-logo}{assets/img/logo}
-\pgfdeclareimage[height=0.05\paperheight]{little-logo}{assets/img/logo}
+\pgfdeclareimage[height=0.04\paperheight]{little-logo}{assets/img/logo}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % DIY Commands
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % fonts sizes
 % ------------------------------------------------------------------------------
-% word size
-\newcommand{\wordSize}{\fontsize{16}{19}}
-% title size
-\newcommand{\titleSize}{\fontsize{32}{36}}
-% subtitle size
-\newcommand{\subtitleSize}{\fontsize{24}{28}}
-% author size
-\newcommand{\authorSize}{\fontsize{20}{24}}
-% institute size
-\newcommand{\instituteSize}{\fontsize{22}{26}}
-% frametitle size
-\newcommand{\frametitleSize}{\fontsize{23}{26}}
+% 1920x1080 - 50.800x28.575 as default
+% ------------------------------------------------------------------------------
+\newcommand{\titleSize}{\fontsize{60}{72}}
+\newcommand{\subtitleSize}{\fontsize{35}{42}}
+\newcommand{\authorSize}{\fontsize{30}{36}}
+\newcommand{\instituteSize}{\fontsize{28}{34}}
+\newcommand{\dateSize}{\fontsize{24}{29}}
+\newcommand{\frametitleSize}{\fontsize{60}{72}}
+\newcommand{\wordSize}{\fontsize{40}{48}}
+\newcommand{\footlineSize}{\fontsize{20}{24}}
+\newcommand{\captionSize}{\fontsize{38}{46}}
+
+% ------------------------------------------------------------------------------
+% 960x720 - 25.400x19.050
+% ------------------------------------------------------------------------------
+%\renewcommand{\titleSize}{\fontsize{32}{36}}
+%\renewcommand{\subtitleSize}{\fontsize{24}{28}}
+%\renewcommand{\authorSize}{\fontsize{20}{24}}
+%\renewcommand{\instituteSize}{\fontsize{22}{26}}
+%\renewcommand{\dateSize}{\fontsize{22}{26}}
+%\renewcommand{\frametitleSize}{\fontsize{23}{26}}
+%\renewcommand{\wordSize}{\fontsize{16}{19}}
+%\renewcommand{\footlineSize}{\fontsize{16}{19}}
+%\renewcommand{\captionSize}{\fontsize{16}{19}}
+
+% ------------------------------------------------------------------------------
+% 1920x1080 - 50.800x28.575
+% ------------------------------------------------------------------------------
+\renewcommand{\titleSize}{\fontsize{60}{72}}
+\renewcommand{\subtitleSize}{\fontsize{35}{42}}
+\renewcommand{\authorSize}{\fontsize{30}{36}}
+\renewcommand{\instituteSize}{\fontsize{28}{34}}
+\renewcommand{\dateSize}{\fontsize{24}{29}}
+\renewcommand{\frametitleSize}{\fontsize{60}{72}}
+\renewcommand{\wordSize}{\fontsize{40}{48}}
+\renewcommand{\footlineSize}{\fontsize{20}{24}}
+\renewcommand{\captionSize}{\fontsize{38}{46}}
+
+% ------------------------------------------------------------------------------
+% 2560x1600 - 67.733x42.333
+% ------------------------------------------------------------------------------
+%\renewcommand{\titleSize}{\fontsize{80}{96}}
+%\renewcommand{\subtitleSize}{\fontsize{45}{54}}
+%\renewcommand{\authorSize}{\fontsize{40}{48}}
+%\renewcommand{\instituteSize}{\fontsize{35}{42}}
+%\renewcommand{\dateSize}{\fontsize{28}{34}}
+%\renewcommand{\frametitleSize}{\fontsize{80}{96}}
+%\renewcommand{\wordSize}{\fontsize{50}{60}}
+%\renewcommand{\footlineSize}{\fontsize{30}{36}}
+%\renewcommand{\captionSize}{\fontsize{45}{54}}
+
+% ------------------------------------------------------------------------------
+% 3072x1920 - 81.280x50.800
+% ------------------------------------------------------------------------------
+%\renewcommand{\titleSize}{\fontsize{100}{120}}
+%\renewcommand{\subtitleSize}{\fontsize{45}{54}}
+%\renewcommand{\authorSize}{\fontsize{50}{60}}
+%\renewcommand{\instituteSize}{\fontsize{45}{54}}
+%\renewcommand{\dateSize}{\fontsize{35}{42}}
+%\renewcommand{\frametitleSize}{\fontsize{100}{120}}
+%\renewcommand{\wordSize}{\fontsize{60}{72}}
+%\renewcommand{\footlineSize}{\fontsize{40}{48}}
+%\renewcommand{\captionSize}{\fontsize{55}{66}}
+
 % ------------------------------------------------------------------------------
 \newcommand\crule[3][\beamer@Slide@color]{\textcolor{#1}{\rule{#2}{#3}}}
 \newcommand{\setSlideTitleMargin}[1]{\beamer@Slide@titleheight=#1}
@@ -149,10 +201,11 @@
 \setbeamerfont{subtitle}{size=\subtitleSize}
 \setbeamerfont{author}{size=\authorSize}
 \setbeamerfont{institute}{size=\instituteSize}
+\setbeamerfont{date}{size=\dateSize}
 \setbeamerfont{frametitle}{family=\sffamily,series=\bfseries,size=\frametitleSize}
-\setbeamerfont{footline}{size=\large}
-\setbeamerfont{caption}{size=\Large}
-\setbeamerfont{alerted text}{series=\bfseries}
+\setbeamerfont{footline}{size=\footlineSize}
+\setbeamerfont{caption}{size=\captionSize}
+\setbeamerfont{alerted text}{series=\bfseries,size={\wordSize}}
 \setbeamerfont{itemize item}{family=\sffamily,size={\wordSize}}
 \setbeamerfont{itemize subitem}{family=\sffamily,size={\wordSize}}
 \setbeamerfont{itemize subsubitem}{family=\sffamily,size={\wordSize}}
@@ -177,6 +230,7 @@
 \setbeamertemplate{itemize subsubitem}{\color{\beamer@Slide@color}$\circ$}
 \setbeamertemplate{itemize/enumerate body begin}{\wordSize\selectfont}
 \setbeamertemplate{itemize/enumerate subbody begin}{\wordSize\selectfont}
+\setbeamertemplate{itemize/enumerate subsubbody begin}{\wordSize\selectfont}
 
 \setbeamertemplate{title page}{%
 	\if\pathToBackground\relax\relax
@@ -193,34 +247,37 @@
 		\end{tikzpicture}
 	\fi
 
-	\setlength{\unitlength}{1cm}
-	\begin{picture}(\pageWidth,\pageHeight)(0,0)
-		\put(0,10){%
+	%\setlength{\unitlength}{1cm}
+	%\begin{picture}(\pageWidth,\pageHeight)(0,0)
+	%	\put(0,10){%
+	\begin{center}
 			\begin{minipage}{0.6\paperwidth}
-			\raggedright
-			% title
-			{\usebeamerfont{title}\textcolor{black}\inserttitle\par~}
-			% subtitle
-			\ifx\insertsubtitle\empty\else%
-				\\[0.01\paperheight]
-  				{\usebeamerfont{subtitle}\textcolor{black}\insertsubtitle}
-  			\fi
-			% authors
-			\\[0.02\paperheight]
-  			{\usebeamerfont{author}\textcolor{black}\insertauthor}
-			% institutes
-  			\ifx\insertinstitute\empty\else%
-  				\\[0.02\paperheight]
-  				{\usebeamerfont{institute}\textcolor{black}\insertinstitute}
-  			\fi
-			% date
-  			\ifx\insertdate\empty\else%
-  				\\[0.02\paperheight]
-  				\usebeamerfont{date}\textcolor{black}{\insertdate}
-  			\fi
+				%\raggedright
+				\center
+				% title
+				{\usebeamerfont{title}\textcolor{black}\inserttitle\par~}
+				% subtitle
+				\ifx\insertsubtitle\empty\else%
+					\\[0.01\paperheight]
+  					{\usebeamerfont{subtitle}\textcolor{black}\insertsubtitle}
+  				\fi
+				% authors
+				\\[0.02\paperheight]
+  				{\usebeamerfont{author}\textcolor{black}\insertauthor}
+				% institutes
+  				\ifx\insertinstitute\empty\else%
+  					\\[0.02\paperheight]
+  					{\usebeamerfont{institute}\textcolor{black}\insertinstitute}
+  				\fi
+				% date
+  				\ifx\insertdate\empty\else%
+  					\\[0.02\paperheight]
+  					\usebeamerfont{date}\textcolor{black}{\insertdate}
+  				\fi
 			\end{minipage}
-		}
-	\end{picture}
+	\end{center}
+	%	}
+	%\end{picture}
 }
 
 \setbeamertemplate{background}{%
@@ -233,27 +290,15 @@
 					\crule[\beamer@Slide@color]{1.1\paperwidth}{1.1\paperheight}
 				}
 				\put(0.44, 0.1){\pgfuseimage{institution}}
-    			\put(20, 13){\pgfuseimage{big-logo}}
-    			\put(24.2, 12.6){%
-					\rotatebox{-90}{%
-						\textcolor{white}{\Large\bf Better health, better futures}}
-				}
+    			%\put(22, 13){\pgfuseimage{big-logo}}
+    			%\put(24.2, 12.6){%
+				%	\rotatebox{-90}{%
+				%		\textcolor{white}{\Large\bf Better health, better futures}}
+				%}
 			\end{picture}
 		\else
 			% exist pic background
 		\fi
-		%\empty
-		%\begin{picture}(\pageWidth,\pageHeight)(0,0)
-		%	\put(-0.1, -0.1){%
-		%		\crule[\beamer@Slide@color]{1.1\paperwidth}{1.1\paperheight}
-		%	}
-    	%	\put(0.44, 0.1){\pgfuseimage{institution}}
-    	%	\put(20, 13){\pgfuseimage{big-logo}}
-    	%	\put(24.2, 12.6){%
-		%		\rotatebox{-90}{%
-		%			\textcolor{white}{\Large\bf Better health, better futures}}
-		%	}
-  		%\end{picture}
 	\else%
 		\begin{picture}(\pageWidth,\pageHeight)(0,0)
 			\put(-0.1,0){\crule[\beamer@Slide@color]{1.1\paperwidth}{0.05\paperheight}}
@@ -269,7 +314,7 @@
 		\vspace*{\beamer@Slide@titleheight}
 	\fi
 	\usebeamercolor[fg]{title}%
-	\usebeamerfont{title}\textcolor{black}{\insertframetitle}\vspace*{0.01\paperheight}
+	\usebeamerfont{frametitle}\textcolor{black}{\insertframetitle}\vspace*{0.01\paperheight}
 }
 
 \setbeamertemplate{footline}{%
@@ -278,9 +323,9 @@
     \begin{center}
 		\hspace*{0.01\paperwidth}
 		\hfill
-		\color{white}{\insertshorttitle}
+		\usebeamerfont{footline}\textcolor{white}{\insertshorttitle}
 		\hfill
-		\color{white}\insertframenumber/\inserttotalframenumber
+		\usebeamerfont{footline}\textcolor{white}{\insertframenumber/\inserttotalframenumber}
 		\hspace*{0.01\paperwidth}
 	\end{center}
 	\fi
