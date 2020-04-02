@@ -3,7 +3,14 @@
 \documentclass[notes]{beamer}
 
 \usepackage[%
-	bgColor=slideOrange
+	pWidth				=25.400,
+	pHeight				=19.050,
+	bgColor				=slideOrange,
+	backgroundPic		=assets/img/background,
+	backgroundOpacity	=0.5,
+	titleHeight			=0.04\paperheight,
+	marginLeft			=0.05\paperwidth,
+	marginRight			=0.05\paperwidth
 ]{./lib/slides}
 \usepackage{lipsum}
 \pdfcompresslevel=9
@@ -36,7 +43,7 @@
 \begin{frame}
   \titlepage
 \end{frame}
-\bnote{This generates notes for pdfpc. These notes also appear on the handout/article versions.}
+%\bnote{This generates notes for pdfpc. These notes also appear on the handout/article versions.}
 
 \begin{frame}{Beamer for UIC slides}
 \begin{itemize}
@@ -63,7 +70,7 @@
 	\vfill
 }
 
-\framepic[0.8]{./assets/img/forest_trees_aerial_view_130608_2048x1152.jpg}{%
+\framepic[0.8]{./assets/img/testBackground.jpg}{%
 	\vfill
     \begin{flushright}
     \textcolor{slideOrange}{%
@@ -117,7 +124,7 @@
 	\end{itemize}
 \end{frame}
 
-\bnote{This is a note for the first slide. Mention how }
+%\bnote{This is a note for the first slide. Mention how }
 
 
 \begin{frame}{Inserting a figure, some maths...}
