@@ -23,7 +23,7 @@
 \usepackage[%
 %	pWidth				=50.800,
 %	pHeight				=28.575,
-	bgColor				=slideBlue,
+	bgColor				=slideOrange,
 %	backgroundPic		=assets/img/background,
 %	backgroundOpacity	=0.5,
 %	titleHeight			=0.04\paperheight,
@@ -59,43 +59,120 @@
 \begin{document}
 
 \begin{frame}
-  \titlepage
+	\titlepage
 \end{frame}
 %\bnote{This generates notes for pdfpc. These notes also appear on the handout/article versions.}
 
 \begin{frame}{Beamer for UIC slides}
 \begin{itemize}
-\item This is an \emph{intermediate} tutorial/template. \hrefcol[slideGreen]{Here is one of many references available for learning LaTeX.}{http://en.wikibooks.org/wiki/LaTeX/}
-\item Beamer has also a detailed \hrefcol{user manual}{http://www.ctan.org/tex-archive/macros/latex/contrib/beamer/doc/beameruserguide.pdf}
-\item \hrefcol{This reference}{http://tug.ctan.org/macros/latex/contrib/beamer/doc/beameruserguide.pdf} seems pretty decent. It has a lot of good notes on presentations in general.
-\item \hrefcol{Overleaf tutorials}{https://www.overleaf.com/learn/latex/Beamer} are also \emph{really great} for learning \LaTeX.
-\item Math typesetting in \TeX\ is the best:
-\begin{equation*}
-\mathrm{i}\,\hslash\frac{\partial}{\partial t} \Psi(\mathbf{r},t) =
--\frac{\hslash^2}{2\,m}\nabla^2\Psi(\mathbf{r},t)
-+ V(\mathbf{r})\Psi(\mathbf{r},t)
-\end{equation*}
-\item Background colour: %
-		  \testcolor{slideOrange}, %
-		  \testcolor{slideBlue}, %
-		  \testcolor{slideGreen}.
+	\item This is an \emph{intermediate} tutorial/template.\par
+		\hrefcol[slideGreen]{%
+			Here is one of many references available for learning LaTeX.}{%
+			http://en.wikibooks.org/wiki/LaTeX/}
+	\item Beamer has also a detailed
+		\hrefcol{%
+			user manual}{%
+			http://www.ctan.org/tex-archive/macros%
+			/latex/contrib/beamer/doc/beameruserguide.pdf}
+	\item \hrefcol{%
+			This reference}{%
+			http://tug.ctan.org/macros%
+			/latex/contrib/beamer/doc/beameruserguide.pdf}
+			seems pretty decent.\par
+			It has a lot of good notes on presentations in general.
+	\item \hrefcol{%
+			Overleaf tutorials}{%
+			https://www.overleaf.com/learn/latex/Beamer}
+			are also \emph{really great} for learning \LaTeX.
+	\item Math typesetting in \TeX\ is the best:
+		\begin{equation*}
+			\mathrm{i}\,\hslash\frac{\partial}{\partial t} \Psi(\mathbf{r},t) =
+				-\frac{\hslash^2}{2\,m}\nabla^2\Psi(\mathbf{r},t)
+				+ V(\mathbf{r})\Psi(\mathbf{r},t)
+		\end{equation*}
+	\item Background colour:%
+		\testcolor{slideOrange},%
+		\testcolor{slideBlue},%
+		\testcolor{slideGreen}.
 \end{itemize}
 \end{frame}
 
-\framecard[slideGreen]{%
-	\vfill
-	\textcolor{white}{A SECTION TITLE\\\vspace{3pt}WITH A CUSTOM COLOR}
-	\vfill
-}
+\begin{frame}{Usefull Latex Symbols}
+	$\backslash$usepackage\}\alert{pifont}\}\par
+	{\ding{74}}{\ding{81}}{\ding{108}}{\ding{110}}{\ding{117}}{\ding{118}}
+	{\ding{212}}{\ding{220}}{\ding{221}}{\ding{222}}{\ding{223}}{\ding{224}}
+	{\ding{225}}{\ding{226}}{\ding{227}}{\ding{228}}{\ding{229}}{\ding{230}}
+		
+	$\backslash$usepackage\}\alert{marvosym}\}\par
+	{\EUR}{\EURcr}{\EURdig}{\EURhv}{\EURtm}{\EyesDollar}{\Moon}{\Sun}{\Aries}
+	{\Cancer}{\Libra}{\Capricorn}{\Taurus}{\Leo}{\Scorpio}{\Aquarius}{\Gemini}
+	{\Virgo}{\Sagittarius}{\Pisces}{\Hexasteel}{\Octosteel}{\Rectpipe}
+	{\Rectsteel}{\Squarepipe}{\Squaresteel}{\FEMALE}{\Female}{\Male}{\MALE}
+	{\Biohazard}{\CEsign}{\Radioactivity}{\Stopsign}{\Forward}{\MoveDown}
+	{\MoveUp}{\Rewind}{\ToTop}{\ForwardToEnd}{\RewindToStart}{\ToBottom}
+	{\RewindToIndex}{\ForwardToIndex}{\ClockLogo}{\Coffeecup}{\PackingWaste}
+	{\Recycling}
 
-\framepic[0.8]{./assets/img/testBackground.jpg}{%
-	\vfill
-    \begin{flushright}
-    \textcolor{white}{%
-		\textbf{A SECTION TITLE\\\vspace{3pt}WITH A CUSTOM PICTURE}
-	}
-    \end{flushright}	
-}
+	$\backslash$usepackage\}\alert{wasysym}\}\par
+	{$\leadsto$}
+	{\mercury}{\earth}{\jupiter}{\uranus}{\pluto}{\venus}{\mars}{\saturn}
+	{\neptune}{\astrosun}{\fullmoon}{\leftmoon}{\newmoon}{\rightmoon}{\aries}
+	{\cancer}{\libra}{\aquarius}{\taurus}{\leo}{\scorpio}{\capricornus}
+	{\gemini}{\virgo}{\sagittarius}{\pisces}{\ascnode}{\descnode}{\conjunction}
+	{\opposition}{\vernal}{\female}{\male}{\CheckedBox}{\Square}{\XBox}
+	{\blacksmiley}{\smiley}
+\end{frame}
+
+\begin{frame}{Usefull Latex Symbols}
+	$\backslash$usepackage\{\alert{fontawesome}\}\par
+	{\faBtc}{\faIls}{\faKrw}{\faUsd}{\faEur}{\faInr}{\faRub}{\faViacoin}{\faGbp}
+	{\faJpy}{\faTry}{\faCopyright}{\faRegistered}{\faCreativeCommons}
+	{\faTrademark}{\faMars}{\faMoonO}{\faVenus}{\faMercury}{\faSunO}
+	{\faArrowCircleDown}{\faArrowDown}{\faLongArrowDown}{\faArrowCircleLeft}
+	{\faArrowLeft}{\faLongArrowLeft}{\faArrowCircleODown}{\faArrowRight}
+	{\faLongArrowRight}{\faArrowCircleOLeft}{\faArrows}{\faLongArrowUp}
+	{\faArrowCircleORight}{\faArrowsAlt}{\faRepeat}{\faArrowCircleOUp}
+	{\faArrowsH}{\faUndo}{\faArrowCircleRight}{\faArrowsV}{\faArrowCircleUp}
+	{\faArrowUp}{\faChevronCircleDown}{\faChevronCircleUp}{\faChevronRight}
+	{\faChevronCircleLeft}{\faChevronDown}{\faChevronUp}{\faChevronCircleRight}
+	{\faChevronLeft}{\faPencil}{\faPencilSquare}{\faPencilSquareO}{\faCheck}
+	{\faCheckSquare}{\faTimesCircle}{\faCheckCircle}{\faCheckSquareO}
+	{\faTimesCircleO}{\faStar}{\faStarHalf}{\faStarHalfO}{\faStarO}{\faCircle}
+	{\faCircleONotch}{\faDotCircleO}{\faSquareO}{\faCircleO}{\faCircleThin}
+	{\faSquare}{\faAmazon}{\faAnchor}{\faAndroid}{\faApple}{\faArchive}
+	{\faAreaChart}{\faAsterisk}{\faAt}{\faBan}{\faBarChart}{\faFighterJet}
+	{\faFile}{\faFileArchiveO}{\faFileAudioO}{\faFileCodeO}{\faFileExcelO}
+	{\faFileImageO}{\faFileO}{\faFilePdfO}{\faFilePowerpointO}{\faFilesO}
+	{\faFileText}{\faFileTextO}{\faFileVideoO}{\faFileWordO}{\faFirefox}
+	{\faFolder}{\faFolderO}{\faFolderOpen}{\faFolderOpenO}{\faFont}{\faPlane}
+	{\faPowerOff}{\faPrint}{\faQq}{\faQrcode}{\faQuestion}{\faQuestionCircle}
+	{\faRecycle}{\faReddit}{\faRefresh}{\faReply}{\faRocket}{\faRss}
+	{\faRssSquare}{\faSafari}{\faBell}{\faBellO}{\faBellSlash}{\faBellSlashO}
+	{\faBolt}{\faBook}{\faBookmark}{\faBookmarkO}{\faGg}{\faGgCircle}{\faGit}
+	{\faGithub}{\faGithubSquare}{\faGlass}{\faGlobe}{\faGoogle}
+	{\faGraduationCap}{\faHeart}{\faHeartbeat}{\faHeartO}{\faHome}
+	{\faInternetExplorer}{\faKey}{\faSignal}{\faSkyatlas}{\faSkype}{\faSlack}
+	{\faSmileO}{\faSort}{\faSortAlphaAsc}{\faSortAlphaDesc}{\faSortAmountAsc}
+	{\faSortAmountDesc}{\faSortNumericAsc}{\faSortNumericDesc}{\faSoundcloud}
+	{\faSpaceShuttle}{\faSpinner}{\faStackOverflow}{\faSteam}{\faSteamSquare}
+	{\faStickyNote}{\faStickyNote}{\faStop}{\faSubway}{\faChrome}{\faClockO}
+	{\faCloudDownload}{\faCloudUpload}{\faCode}{\faCodeFork}{\faCodepen}
+	{\faCoffee}{\faCog}{\faCogs}{\faComment}{\faCommentO}{\faComments}
+	{\faCommentsO}{\faCube}{\faDesktop}{\faDiamond}{\faDownload}{\faDropbox}
+	{\faEmpire}{\faLanguage}{\faLaptop}{\faLeaf}{\faLineChart}{\faLocationArrow}
+	{\faLock}{\faMap}{\faMapMarker}{\faMapO}{\faMehO}{\faMicrophone}
+	{\faMicrophoneSlash}{\faSuitcase}{\faTag}{\faTags}{\faTerminal}
+	{\faToggleOff}{\faToggleOn}{\faTrain}{\faTrash}{\faTrashO}{\faTree}
+	{\faTrophy}{\faTruck}{\faTwitter}{\faTwitterSquare}{\faUmbrella}
+	{\faUniversity}{\faUnlock}{\faUnlockAlt}{\faUser}{\faUserMd}{\faUserPlus}
+	{\faUsers}{\faUserTimes}{\faEnvelope}{\faEnvelopeO}{\faExpeditedssl}
+	{\faExternalLink}{\faExternalLinkSquare}{\faFastBackward}{\faFastForward}
+	{\faPaperPlane}{\faPaperPlaneO}{\faVolumeDown}{\faVolumeOff}{\faVolumeUp}
+	{\faWeibo}{\faWeixin}{\faWifi}{\faWikipediaW}{\faWindows}{\faWordpress}
+	{\faYoutube}{\faYoutubePlay}{\faYoutubeSquare}{\faBank}{\faBarChartO}
+	{\faFileZipO}{\faFlash}{\faInstitution}{\faMobilePhone}{\faMortarBoard}
+	{\faPaste}{\faSend}{\faSendO}{\faWechat}
+\end{frame}
 
 \begin{frame}[fragile]{Writing a Simple Slide}
 \framesubtitle{It's really easy!}
@@ -144,14 +221,13 @@
 
 %\bnote{This is a note for the first slide. Mention how }
 
-
 \begin{frame}{Inserting a figure, some maths...}
   \begin{itemize}
   \item   Here's a figure:
     \begin{figure}[h]
       \centering
       \colorbox{blue}{\includegraphics[width=.13\linewidth]{./assets/img/logo}}
-      \caption{The Usher's big U logo}
+      \caption{The Institutions big logo}
       \label{fig:big-u}
     \end{figure}
   \item 
@@ -162,6 +238,21 @@
   \end{eqnarray}
   \end{itemize}
 \end{frame}
+
+\framecard[slideGreen]{%
+	\vfill
+	\textcolor{white}{A SECTION TITLE\\\vspace{3pt}WITH A CUSTOM COLOR}
+	\vfill
+}
+
+\framepic[0.8]{./assets/img/testBackground.jpg}{%
+	\vfill
+    \begin{flushright}
+    \textcolor{white}{%
+		\textbf{A SECTION TITLE\\\vspace{3pt}WITH A CUSTOM PICTURE}
+	}
+    \end{flushright}	
+}
 
 \begin{frame}
 	\begin{center}

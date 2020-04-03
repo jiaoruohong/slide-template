@@ -3,6 +3,40 @@
 \usepackage{times}
 \usepackage{tikz}
 \usepackage[absolute,overlay]{textpos}
+\usepackage{pifont}
+\usepackage{marvosym}
+\usepackage{wasysym}
+\usepackage{fontawesome}
+\usepackage{ifxetex,ifluatex}
+
+% hopefully embeds all fonts in pdf
+\ifxetex % xelatex
+	\usepackage{xltxtra,fontspec,xunicode}
+	\usepackage{ctex}
+	\ctexset{%
+		punct=quanjiao,
+		space=auto,
+		autoindent=true
+	}
+	\usepackage{xeCJK}
+	\xeCJKsetup{%
+		CJKmath=true,
+		AutoFallBack=true,
+		AutoFakeBold=true,
+		AutoFakeSlant=true
+	}
+\else % pdflatex
+	\usepackage[T1]{fontenc}
+	\usepackage[utf8]{inputenc}
+	\usepackage{pslatex}
+\fi
+
+% appearance
+\ifxetex % xelatex
+\else % pdflatex
+	\usepackage[kerning,spacing]{microtype} % more compact and arguably nicer
+\fi
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Resolutions
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -72,6 +106,10 @@
 \DeclareOptionBeamer{marginRight}{\beamer@Slide@Margin@Right=#1}
 
 \ProcessOptionsBeamer
+
+\newlength\barheight
+\setlength\barheight{\paperheight}
+\divide\barheight by 12
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Slide Margins
@@ -225,9 +263,12 @@
 % Slide Templates
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \setbeamertemplate{navigation symbols}{}
-\setbeamertemplate{itemize item}{\color{\beamer@Slide@color}$\bullet$}
-\setbeamertemplate{itemize subitem}{\color{\beamer@Slide@color}$\circ$}
-\setbeamertemplate{itemize subsubitem}{\color{\beamer@Slide@color}$\circ$}
+\setbeamertemplate{itemize item}{\color{\beamer@Slide@color}\Squarepipe}
+\setbeamertemplate{itemize subitem}{\color{\beamer@Slide@color}\Squarepipe}
+\setbeamertemplate{itemize subsubitem}{\color{\beamer@Slide@color}\Squarepipe}
+%\setbeamertemplate{itemize item}{\color{\beamer@Slide@color}$\bullet$}
+%\setbeamertemplate{itemize subitem}{\color{\beamer@Slide@color}$\circ$}
+%\setbeamertemplate{itemize subsubitem}{\color{\beamer@Slide@color}$\circ$}
 \setbeamertemplate{itemize/enumerate body begin}{\wordSize\selectfont}
 \setbeamertemplate{itemize/enumerate subbody begin}{\wordSize\selectfont}
 \setbeamertemplate{itemize/enumerate subsubbody begin}{\wordSize\selectfont}
