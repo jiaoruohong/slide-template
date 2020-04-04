@@ -1,29 +1,17 @@
 \documentclass{beamer}
 %\documentclass[notes-only]{beamer}
 %\documentclass[notes]{beamer}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Resolutions
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% ------------------------------------------------------------------------------
-% 4:3 (default)
-% ------------------------------------------------------------------------------
-% 960x720   - 25.400x19.050
-% ------------------------------------------------------------------------------
-% 16:9
-% ------------------------------------------------------------------------------
-% 1920x1080 - 50.800x28.575
-% ------------------------------------------------------------------------------
-% 16:10
-% ------------------------------------------------------------------------------
-% 2560x1600 - 67.733x42.333
-% ------------------------------------------------------------------------------
-% 3072x1920 - 81.280x50.800
-% ------------------------------------------------------------------------------
 
 \usepackage[%
 %	pWidth				=50.800,
 %	pHeight				=28.575,
-	bgColor				=slideOrange,
+	bgColor				=slidePearlecentAqua,
+    titlesColor         =white,
+    frametitleColor     =black,
+    footlineColor       =white,
+    itemColor           =slideDarkRed,
+    subitemColor        =slideDarkCyan,
+    subsubitemColor     =slideDarkYellow,
 %	backgroundPic		=assets/img/background,
 %	backgroundOpacity	=0.5,
 %	titleHeight			=0.04\paperheight,
@@ -33,6 +21,10 @@
 \usepackage{lipsum}
 \pdfcompresslevel=9
 \pdfobjcompresslevel=3
+
+\usepackage{array}
+\newcolumntype{C}[1]{>{\centering\arraybackslash}m{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\arraybackslash}m{#1}}
 
 \title[Insert Title (short version of title)]{Insert Presentation Title Here}
 
@@ -90,88 +82,100 @@
 				-\frac{\hslash^2}{2\,m}\nabla^2\Psi(\mathbf{r},t)
 				+ V(\mathbf{r})\Psi(\mathbf{r},t)
 		\end{equation*}
-	\item Background colour:%
-		\testcolor{slideOrange},%
-		\testcolor{slideBlue},%
-		\testcolor{slideGreen}.
 \end{itemize}
 \end{frame}
 
-\begin{frame}{Usefull Latex Symbols}
-	$\backslash$usepackage\}\alert{pifont}\}\par
-	{\ding{74}}{\ding{81}}{\ding{108}}{\ding{110}}{\ding{117}}{\ding{118}}
-	{\ding{212}}{\ding{220}}{\ding{221}}{\ding{222}}{\ding{223}}{\ding{224}}
-	{\ding{225}}{\ding{226}}{\ding{227}}{\ding{228}}{\ding{229}}{\ding{230}}
-		
-	$\backslash$usepackage\}\alert{marvosym}\}\par
-	{\EUR}{\EURcr}{\EURdig}{\EURhv}{\EURtm}{\EyesDollar}{\Moon}{\Sun}{\Aries}
-	{\Cancer}{\Libra}{\Capricorn}{\Taurus}{\Leo}{\Scorpio}{\Aquarius}{\Gemini}
-	{\Virgo}{\Sagittarius}{\Pisces}{\Hexasteel}{\Octosteel}{\Rectpipe}
-	{\Rectsteel}{\Squarepipe}{\Squaresteel}{\FEMALE}{\Female}{\Male}{\MALE}
-	{\Biohazard}{\CEsign}{\Radioactivity}{\Stopsign}{\Forward}{\MoveDown}
-	{\MoveUp}{\Rewind}{\ToTop}{\ForwardToEnd}{\RewindToStart}{\ToBottom}
-	{\RewindToIndex}{\ForwardToIndex}{\ClockLogo}{\Coffeecup}{\PackingWaste}
-	{\Recycling}
-
-	$\backslash$usepackage\}\alert{wasysym}\}\par
-	{$\leadsto$}
-	{\mercury}{\earth}{\jupiter}{\uranus}{\pluto}{\venus}{\mars}{\saturn}
-	{\neptune}{\astrosun}{\fullmoon}{\leftmoon}{\newmoon}{\rightmoon}{\aries}
-	{\cancer}{\libra}{\aquarius}{\taurus}{\leo}{\scorpio}{\capricornus}
-	{\gemini}{\virgo}{\sagittarius}{\pisces}{\ascnode}{\descnode}{\conjunction}
-	{\opposition}{\vernal}{\female}{\male}{\CheckedBox}{\Square}{\XBox}
-	{\blacksmiley}{\smiley}
+\begin{frame}{Useable Colors}
+\begin{center}
+\begin{tabular}{m{15em}m{15em}}
+    {\testcolor{slideRed}} & {\testcolor{slideDarkRed}} \\
+    {\testcolor{slideGreen}} & {\testcolor{slideDarkGreen}} \\
+    {\testcolor{slideBlue}} & {\testcolor{slideDarkBlue}} \\
+    {\testcolor{slideYellow}} & {\testcolor{slideDarkYellow}} \\
+    {\testcolor{slideOrange}} & {\testcolor{slideDarkOrange}} \\
+    {\testcolor{slideCyan}} & {\testcolor{slideDarkCyan}} \\
+    {\testcolor{slidePearlecentAqua}} & {\testcolor{slideDarkPearlecentAqua}} \\
+    {\testcolor{slidePurple}} & {\testcolor{slideDarkPurple}} \\
+    {\testcolor{slideBrown}} & {\testcolor{slideDarkBrown}} \\
+\end{tabular}
+\end{center}
 \end{frame}
 
 \begin{frame}{Usefull Latex Symbols}
-	$\backslash$usepackage\{\alert{fontawesome}\}\par
-	{\faBtc}{\faIls}{\faKrw}{\faUsd}{\faEur}{\faInr}{\faRub}{\faViacoin}{\faGbp}
-	{\faJpy}{\faTry}{\faCopyright}{\faRegistered}{\faCreativeCommons}
-	{\faTrademark}{\faMars}{\faMoonO}{\faVenus}{\faMercury}{\faSunO}
-	{\faArrowCircleDown}{\faArrowDown}{\faLongArrowDown}{\faArrowCircleLeft}
-	{\faArrowLeft}{\faLongArrowLeft}{\faArrowCircleODown}{\faArrowRight}
-	{\faLongArrowRight}{\faArrowCircleOLeft}{\faArrows}{\faLongArrowUp}
-	{\faArrowCircleORight}{\faArrowsAlt}{\faRepeat}{\faArrowCircleOUp}
-	{\faArrowsH}{\faUndo}{\faArrowCircleRight}{\faArrowsV}{\faArrowCircleUp}
-	{\faArrowUp}{\faChevronCircleDown}{\faChevronCircleUp}{\faChevronRight}
-	{\faChevronCircleLeft}{\faChevronDown}{\faChevronUp}{\faChevronCircleRight}
-	{\faChevronLeft}{\faPencil}{\faPencilSquare}{\faPencilSquareO}{\faCheck}
-	{\faCheckSquare}{\faTimesCircle}{\faCheckCircle}{\faCheckSquareO}
-	{\faTimesCircleO}{\faStar}{\faStarHalf}{\faStarHalfO}{\faStarO}{\faCircle}
-	{\faCircleONotch}{\faDotCircleO}{\faSquareO}{\faCircleO}{\faCircleThin}
-	{\faSquare}{\faAmazon}{\faAnchor}{\faAndroid}{\faApple}{\faArchive}
-	{\faAreaChart}{\faAsterisk}{\faAt}{\faBan}{\faBarChart}{\faFighterJet}
-	{\faFile}{\faFileArchiveO}{\faFileAudioO}{\faFileCodeO}{\faFileExcelO}
-	{\faFileImageO}{\faFileO}{\faFilePdfO}{\faFilePowerpointO}{\faFilesO}
-	{\faFileText}{\faFileTextO}{\faFileVideoO}{\faFileWordO}{\faFirefox}
-	{\faFolder}{\faFolderO}{\faFolderOpen}{\faFolderOpenO}{\faFont}{\faPlane}
-	{\faPowerOff}{\faPrint}{\faQq}{\faQrcode}{\faQuestion}{\faQuestionCircle}
-	{\faRecycle}{\faReddit}{\faRefresh}{\faReply}{\faRocket}{\faRss}
-	{\faRssSquare}{\faSafari}{\faBell}{\faBellO}{\faBellSlash}{\faBellSlashO}
-	{\faBolt}{\faBook}{\faBookmark}{\faBookmarkO}{\faGg}{\faGgCircle}{\faGit}
-	{\faGithub}{\faGithubSquare}{\faGlass}{\faGlobe}{\faGoogle}
-	{\faGraduationCap}{\faHeart}{\faHeartbeat}{\faHeartO}{\faHome}
-	{\faInternetExplorer}{\faKey}{\faSignal}{\faSkyatlas}{\faSkype}{\faSlack}
-	{\faSmileO}{\faSort}{\faSortAlphaAsc}{\faSortAlphaDesc}{\faSortAmountAsc}
-	{\faSortAmountDesc}{\faSortNumericAsc}{\faSortNumericDesc}{\faSoundcloud}
-	{\faSpaceShuttle}{\faSpinner}{\faStackOverflow}{\faSteam}{\faSteamSquare}
-	{\faStickyNote}{\faStickyNote}{\faStop}{\faSubway}{\faChrome}{\faClockO}
-	{\faCloudDownload}{\faCloudUpload}{\faCode}{\faCodeFork}{\faCodepen}
-	{\faCoffee}{\faCog}{\faCogs}{\faComment}{\faCommentO}{\faComments}
-	{\faCommentsO}{\faCube}{\faDesktop}{\faDiamond}{\faDownload}{\faDropbox}
-	{\faEmpire}{\faLanguage}{\faLaptop}{\faLeaf}{\faLineChart}{\faLocationArrow}
-	{\faLock}{\faMap}{\faMapMarker}{\faMapO}{\faMehO}{\faMicrophone}
-	{\faMicrophoneSlash}{\faSuitcase}{\faTag}{\faTags}{\faTerminal}
-	{\faToggleOff}{\faToggleOn}{\faTrain}{\faTrash}{\faTrashO}{\faTree}
-	{\faTrophy}{\faTruck}{\faTwitter}{\faTwitterSquare}{\faUmbrella}
-	{\faUniversity}{\faUnlock}{\faUnlockAlt}{\faUser}{\faUserMd}{\faUserPlus}
-	{\faUsers}{\faUserTimes}{\faEnvelope}{\faEnvelopeO}{\faExpeditedssl}
-	{\faExternalLink}{\faExternalLinkSquare}{\faFastBackward}{\faFastForward}
-	{\faPaperPlane}{\faPaperPlaneO}{\faVolumeDown}{\faVolumeOff}{\faVolumeUp}
-	{\faWeibo}{\faWeixin}{\faWifi}{\faWikipediaW}{\faWindows}{\faWordpress}
-	{\faYoutube}{\faYoutubePlay}{\faYoutubeSquare}{\faBank}{\faBarChartO}
-	{\faFileZipO}{\faFlash}{\faInstitution}{\faMobilePhone}{\faMortarBoard}
-	{\faPaste}{\faSend}{\faSendO}{\faWechat}
+$\backslash$usepackage\}\alert{pifont}\}\par
+{\ding{74}}{\ding{81}}{\ding{108}}{\ding{110}}{\ding{117}}{\ding{118}}
+{\ding{212}}{\ding{220}}{\ding{221}}{\ding{222}}{\ding{223}}{\ding{224}}
+{\ding{225}}{\ding{226}}{\ding{227}}{\ding{228}}{\ding{229}}{\ding{230}}
+		
+$\backslash$usepackage\}\alert{marvosym}\}\par
+{\EUR}{\EURcr}{\EURdig}{\EURhv}{\EURtm}{\EyesDollar}{\Moon}{\Sun}{\Aries}
+{\Cancer}{\Libra}{\Capricorn}{\Taurus}{\Leo}{\Scorpio}{\Aquarius}{\Gemini}
+{\Virgo}{\Sagittarius}{\Pisces}{\Hexasteel}{\Octosteel}{\Rectpipe}
+{\Rectsteel}{\Squarepipe}{\Squaresteel}{\FEMALE}{\Female}{\Male}{\MALE}
+{\Biohazard}{\CEsign}{\Radioactivity}{\Stopsign}{\Forward}{\MoveDown}
+{\MoveUp}{\Rewind}{\ToTop}{\ForwardToEnd}{\RewindToStart}{\ToBottom}
+{\RewindToIndex}{\ForwardToIndex}{\ClockLogo}{\Coffeecup}{\PackingWaste}
+{\Recycling}
+
+$\backslash$usepackage\}\alert{wasysym}\}\par
+{$\leadsto$}
+{\mercury}{\earth}{\jupiter}{\uranus}{\pluto}{\venus}{\mars}{\saturn}
+{\neptune}{\astrosun}{\fullmoon}{\leftmoon}{\newmoon}{\rightmoon}{\aries}
+{\cancer}{\libra}{\aquarius}{\taurus}{\leo}{\scorpio}{\capricornus}
+{\gemini}{\virgo}{\sagittarius}{\pisces}{\ascnode}{\descnode}{\conjunction}
+{\opposition}{\vernal}{\female}{\male}{\CheckedBox}{\Square}{\XBox}
+{\blacksmiley}{\smiley}
+\end{frame}
+
+\begin{frame}{Usefull Latex Symbols}
+$\backslash$usepackage\{\alert{fontawesome}\}\par
+{\faBtc}{\faIls}{\faKrw}{\faUsd}{\faEur}{\faInr}{\faRub}{\faViacoin}{\faGbp}
+{\faJpy}{\faTry}{\faCopyright}{\faRegistered}{\faCreativeCommons}
+{\faTrademark}{\faMars}{\faMoonO}{\faVenus}{\faMercury}{\faSunO}
+{\faArrowCircleDown}{\faArrowDown}{\faLongArrowDown}{\faArrowCircleLeft}
+{\faArrowLeft}{\faLongArrowLeft}{\faArrowCircleODown}{\faArrowRight}
+{\faLongArrowRight}{\faArrowCircleOLeft}{\faArrows}{\faLongArrowUp}
+{\faArrowCircleORight}{\faArrowsAlt}{\faRepeat}{\faArrowCircleOUp}
+{\faArrowsH}{\faUndo}{\faArrowCircleRight}{\faArrowsV}{\faArrowCircleUp}
+{\faArrowUp}{\faChevronCircleDown}{\faChevronCircleUp}{\faChevronRight}
+{\faChevronCircleLeft}{\faChevronDown}{\faChevronUp}{\faChevronCircleRight}
+{\faChevronLeft}{\faPencil}{\faPencilSquare}{\faPencilSquareO}{\faCheck}
+{\faCheckSquare}{\faTimesCircle}{\faCheckCircle}{\faCheckSquareO}
+{\faTimesCircleO}{\faStar}{\faStarHalf}{\faStarHalfO}{\faStarO}{\faCircle}
+{\faCircleONotch}{\faDotCircleO}{\faSquareO}{\faCircleO}{\faCircleThin}
+{\faSquare}{\faAmazon}{\faAnchor}{\faAndroid}{\faApple}{\faArchive}
+{\faAreaChart}{\faAsterisk}{\faAt}{\faBan}{\faBarChart}{\faFighterJet}
+{\faFile}{\faFileArchiveO}{\faFileAudioO}{\faFileCodeO}{\faFileExcelO}
+{\faFileImageO}{\faFileO}{\faFilePdfO}{\faFilePowerpointO}{\faFilesO}
+{\faFileText}{\faFileTextO}{\faFileVideoO}{\faFileWordO}{\faFirefox}
+{\faFolder}{\faFolderO}{\faFolderOpen}{\faFolderOpenO}{\faFont}{\faPlane}
+{\faPowerOff}{\faPrint}{\faQq}{\faQrcode}{\faQuestion}{\faQuestionCircle}
+{\faRecycle}{\faReddit}{\faRefresh}{\faReply}{\faRocket}{\faRss}
+{\faRssSquare}{\faSafari}{\faBell}{\faBellO}{\faBellSlash}{\faBellSlashO}
+{\faBolt}{\faBook}{\faBookmark}{\faBookmarkO}{\faGg}{\faGgCircle}{\faGit}
+{\faGithub}{\faGithubSquare}{\faGlass}{\faGlobe}{\faGoogle}
+{\faGraduationCap}{\faHeart}{\faHeartbeat}{\faHeartO}{\faHome}
+{\faInternetExplorer}{\faKey}{\faSignal}{\faSkyatlas}{\faSkype}{\faSlack}
+{\faSmileO}{\faSort}{\faSortAlphaAsc}{\faSortAlphaDesc}{\faSortAmountAsc}
+{\faSortAmountDesc}{\faSortNumericAsc}{\faSortNumericDesc}{\faSoundcloud}
+{\faSpaceShuttle}{\faSpinner}{\faStackOverflow}{\faSteam}{\faSteamSquare}
+{\faStickyNote}{\faStickyNote}{\faStop}{\faSubway}{\faChrome}{\faClockO}
+{\faCloudDownload}{\faCloudUpload}{\faCode}{\faCodeFork}{\faCodepen}
+{\faCoffee}{\faCog}{\faCogs}{\faComment}{\faCommentO}{\faComments}
+{\faCommentsO}{\faCube}{\faDesktop}{\faDiamond}{\faDownload}{\faDropbox}
+{\faEmpire}{\faLanguage}{\faLaptop}{\faLeaf}{\faLineChart}{\faLocationArrow}
+{\faLock}{\faMap}{\faMapMarker}{\faMapO}{\faMehO}{\faMicrophone}
+{\faMicrophoneSlash}{\faSuitcase}{\faTag}{\faTags}{\faTerminal}
+{\faToggleOff}{\faToggleOn}{\faTrain}{\faTrash}{\faTrashO}{\faTree}
+{\faTrophy}{\faTruck}{\faTwitter}{\faTwitterSquare}{\faUmbrella}
+{\faUniversity}{\faUnlock}{\faUnlockAlt}{\faUser}{\faUserMd}{\faUserPlus}
+{\faUsers}{\faUserTimes}{\faEnvelope}{\faEnvelopeO}{\faExpeditedssl}
+{\faExternalLink}{\faExternalLinkSquare}{\faFastBackward}{\faFastForward}
+{\faPaperPlane}{\faPaperPlaneO}{\faVolumeDown}{\faVolumeOff}{\faVolumeUp}
+{\faWeibo}{\faWeixin}{\faWifi}{\faWikipediaW}{\faWindows}{\faWordpress}
+{\faYoutube}{\faYoutubePlay}{\faYoutubeSquare}{\faBank}{\faBarChartO}
+{\faFileZipO}{\faFlash}{\faInstitution}{\faMobilePhone}{\faMortarBoard}
+{\faPaste}{\faSend}{\faSendO}{\faWechat}
 \end{frame}
 
 \begin{frame}[fragile]{Writing a Simple Slide}
@@ -179,9 +183,9 @@
 \begin{block}{Code for an Itemised List}<+->
 \begin{verbatim}
 \begin{frame}
-  \begin{itemize}[<+->]
-    \item ...
-  \end{itemize}
+    \begin{itemize}[<+->]
+        \item ...
+    \end{itemize}
 \end{verbatim}
 \end{block}
 \end{frame}
@@ -207,7 +211,7 @@
 	Main body text Sans. Here is a way to \alert{highlight text}.
 	\label{sec:Test1}
 	\begin{itemize}
-		\item Bullet points$\Box$
+		\item Bullet points
 		\item ...
 			\begin{itemize}
 				\item subitem
@@ -222,24 +226,25 @@
 %\bnote{This is a note for the first slide. Mention how }
 
 \begin{frame}{Inserting a figure, some maths...}
-  \begin{itemize}
-  \item   Here's a figure:
+\begin{itemize}
+    \item   Here's a figure:
     \begin{figure}[h]
-      \centering
-      \colorbox{blue}{\includegraphics[width=.13\linewidth]{./assets/img/logo}}
-      \caption{The Institutions big logo}
-      \label{fig:big-u}
+        \centering
+        \colorbox{blue}{\includegraphics[width=.13\linewidth]{./assets/img/logo}}
+        \caption{The Institutions big logo}
+        \label{fig:big-u}
     \end{figure}
-  \item 
+    \item 
     And here's a famous equation:
-  \begin{eqnarray}
-    \label{eq:schroedinger}
-    i\hbar {\frac {\partial }{\partial t}}|\psi (t)\rangle ={\hat {H}}|\psi (t)\rangle
-  \end{eqnarray}
-  \end{itemize}
+    \begin{eqnarray}
+        \label{eq:schroedinger}
+        i\hbar {\frac {\partial }{\partial t}}|\psi (t)\rangle =%
+        {\hat {H}}|\psi (t)\rangle
+    \end{eqnarray}
+\end{itemize}
 \end{frame}
 
-\framecard[slideGreen]{%
+\framecard[slideDarkPurple]{%
 	\vfill
 	\textcolor{white}{A SECTION TITLE\\\vspace{3pt}WITH A CUSTOM COLOR}
 	\vfill
@@ -255,9 +260,9 @@
 }
 
 \begin{frame}
-	\begin{center}
-		{\fontsize{50}{60}\selectfont Thanks}
-	\end{center}
+\begin{center}
+    {\fontsize{120}{72}\selectfont Thanks}
+\end{center}
 \end{frame}
 
 \end{document}

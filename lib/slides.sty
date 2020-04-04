@@ -45,16 +45,9 @@
 % ------------------------------------------------------------------------------
 % 960x720 - 25.400x19.050
 % ------------------------------------------------------------------------------
-% wordSize			=\fontsize{16}{19},
-% titleSize			=\fontsize{32}{36},
-% subtitleSize		=\fontsize{24}{28},
-% authorSize		=\fontsize{20}{24},
-% instituteSize		=\fontsize{22}{26},
-% ------------------------------------------------------------------------------
 % 16:9 (default)
 % ------------------------------------------------------------------------------
 % 1920x1080 - 50.800x28.575
-% ------------------------------------------------------------------------------
 % ------------------------------------------------------------------------------
 % 16:10
 % ------------------------------------------------------------------------------
@@ -62,51 +55,109 @@
 % ------------------------------------------------------------------------------
 % 3072x1920 - 81.280x50.800
 % ------------------------------------------------------------------------------
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Default colors
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\definecolor{slideRed}{HTML}{CC2A36}
+\definecolor{slideDarkRed}{HTML}{470707}
+
+\definecolor{slideGreen}{HTML}{569932}
+\definecolor{slideDarkGreen}{HTML}{21451F}
+
+\definecolor{slideBlue}{HTML}{468BB4}
+\definecolor{slideDarkBlue}{HTML}{03396C}
+
+\definecolor{slideYellow}{HTML}{FFCC5C}
+\definecolor{slideDarkYellow}{RGB}{226,120,18}
+
+\definecolor{slideOrange}{HTML}{C75E24}
+\definecolor{slideDarkOrange}{HTML}{8A2B0D}
+
+\definecolor{slideCyan}{HTML}{54B2A9}
+\definecolor{slideDarkCyan}{HTML}{009688}
+
+\definecolor{slidePearlecentAqua}{HTML}{0D646B}
+\definecolor{slideDarkPearlecentAqua}{HTML}{16383A}
+
+\definecolor{slidePurple}{HTML}{8874A3}
+\definecolor{slideDarkPurple}{HTML}{3D2352}
+
+\definecolor{slideBrown}{HTML}{BE9B7B}
+\definecolor{slideDarkBrown}{HTML}{4B3832}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Options
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% page width
+% ------------------------------------------------------------------------------
+% page width & height
 \newcommand{\pageWidth}{50.800}
-\DeclareOptionBeamer{pWidth}{\renewcommand\pageWidth{#1}}
-% page height
 \newcommand{\pageHeight}{28.575}
+\DeclareOptionBeamer{pWidth}{\renewcommand\pageWidth{#1}}
 \DeclareOptionBeamer{pHeight}{\renewcommand\pageHeight{#1}}
 
 \ProcessOptionsBeamer
-
+% ------------------------------------------------------------------------------
 % paper size
 \geometry{%
 	paperwidth=\pageWidth cm,
 	paperheight=\pageHeight cm
 }
-% title page background
+% title page background & opacity
 \newcommand{\pathToBackground}{}
-\DeclareOptionBeamer{backgroundPic}{\renewcommand\pathToBackground{#1}}
-%opacity=1
 \newcommand{\titlepageOpacity}{1}
+\DeclareOptionBeamer{backgroundPic}{\renewcommand\pathToBackground{#1}}
 \DeclareOptionBeamer{backgroundOpacity}{\renewcommand\titlepageOpacity{#1}}
 
-% default background
-\definecolor{slideOrange}{RGB}{204, 89, 17}
-\definecolor{slideGreen}{RGB}{156, 154, 0}
-\definecolor{slideBlue}{RGB}{69, 126, 129}
-\newcommand{\beamer@Slide@color}{slideBlue}
-\DeclareOptionBeamer{bgColor}{\renewcommand\beamer@Slide@color{#1}}
+\ProcessOptionsBeamer
+% ------------------------------------------------------------------------------
+% default background color is slidePearlecentAqua
+\newcommand{\beamer@Slide@color}{slidePearlecentAqua}
+% default color of title, authors, institute, and date is white
+\newcommand{\beamer@Slide@Titles@color}{white}
+% default color of frametitle is black
+\newcommand{\beamer@Slide@Frametitle@color}{black}
+% default color of footline is white
+\newcommand{\beamer@Slide@Footline@color}{white}
+
+\DeclareOptionBeamer{bgColor}{%
+	\renewcommand\beamer@Slide@color{#1}}
+\DeclareOptionBeamer{titlesColor}{%
+	\renewcommand\beamer@Slide@Titles@color{#1}}
+\DeclareOptionBeamer{frametitleColor}{%
+	\renewcommand\beamer@Slide@Frametitle@color{#1}}
+\DeclareOptionBeamer{footlineColor}{%
+	\renewcommand\beamer@Slide@Footline@color{#1}}
+
+\ProcessOptionsBeamer
+% ------------------------------------------------------------------------------
+% default items color is background color
+\newcommand{\beamer@Slide@Item@color}{\beamer@Slide@color}
+\newcommand{\beamer@Slide@Subitem@color}{\beamer@Slide@color}
+\newcommand{\beamer@Slide@Subsubitem@color}{\beamer@Slide@color}
+\DeclareOptionBeamer{itemColor}{%
+	\renewcommand\beamer@Slide@Item@color{#1}}
+\DeclareOptionBeamer{subitemColor}{%
+	\renewcommand\beamer@Slide@Subitem@color{#1}}
+\DeclareOptionBeamer{subsubitemColor}{%
+	\renewcommand\beamer@Slide@Subsubitem@color{#1}}
+
+\ProcessOptionsBeamer
+% ------------------------------------------------------------------------------
 % default titleheight
 \newdimen\beamer@Slide@titleheight
 \beamer@Slide@titleheight=0.04\paperheight
 \DeclareOptionBeamer{titleHeight}{\beamer@Slide@titleheight=#1}
-% default left margin
+% default left & right margin
 \newdimen\beamer@Slide@Margin@Left
-\beamer@Slide@Margin@Left=0.05\paperwidth
-\DeclareOptionBeamer{marginLeft}{\beamer@Slide@Margin@Left=#1}
-% default right margin
 \newdimen\beamer@Slide@Margin@Right
+\beamer@Slide@Margin@Left=0.05\paperwidth
 \beamer@Slide@Margin@Right=0.05\paperwidth
+\DeclareOptionBeamer{marginLeft}{\beamer@Slide@Margin@Left=#1}
 \DeclareOptionBeamer{marginRight}{\beamer@Slide@Margin@Right=#1}
 
 \ProcessOptionsBeamer
-
+% ------------------------------------------------------------------------------
 \newlength\barheight
 \setlength\barheight{\paperheight}
 \divide\barheight by 12
@@ -198,7 +249,7 @@
 % ------------------------------------------------------------------------------
 \newcommand\crule[3][\beamer@Slide@color]{\textcolor{#1}{\rule{#2}{#3}}}
 \newcommand{\setSlideTitleMargin}[1]{\beamer@Slide@titleheight=#1}
-\newcommand{\testcolor}[1]{\colorbox{#1}{\textcolor{#1}{test}} \texttt{#1}}
+\newcommand{\testcolor}[1]{\colorbox{#1}{\textcolor{#1}{test}} \textsf{#1}}
 \newcommand{\hrefcol}[3][cyan]{\textcolor{#1}{\href{#3}{#2}}}
 % Frame with background color
 \newcommand{\framecard}[2][slideBlue]{%
@@ -262,16 +313,29 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Slide Templates
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\setbeamertemplate{navigation symbols}{}
-\setbeamertemplate{itemize item}{\color{\beamer@Slide@color}\Squarepipe}
-\setbeamertemplate{itemize subitem}{\color{\beamer@Slide@color}\Squarepipe}
-\setbeamertemplate{itemize subsubitem}{\color{\beamer@Slide@color}\Squarepipe}
+\setbeamertemplate{navigation symbols}{%
+}
+\setbeamertemplate{itemize item}{%
+	\color{\beamer@Slide@Item@color}\Squarepipe
+}
+\setbeamertemplate{itemize subitem}{%
+	\color{\beamer@Slide@Subitem@color}\Squarepipe
+}
+\setbeamertemplate{itemize subsubitem}{%
+	\color{\beamer@Slide@Subsubitem@color}\Squarepipe
+}
 %\setbeamertemplate{itemize item}{\color{\beamer@Slide@color}$\bullet$}
 %\setbeamertemplate{itemize subitem}{\color{\beamer@Slide@color}$\circ$}
 %\setbeamertemplate{itemize subsubitem}{\color{\beamer@Slide@color}$\circ$}
-\setbeamertemplate{itemize/enumerate body begin}{\wordSize\selectfont}
-\setbeamertemplate{itemize/enumerate subbody begin}{\wordSize\selectfont}
-\setbeamertemplate{itemize/enumerate subsubbody begin}{\wordSize\selectfont}
+\setbeamertemplate{itemize/enumerate body begin}{%
+	\wordSize\selectfont
+}
+\setbeamertemplate{itemize/enumerate subbody begin}{%
+	\wordSize\selectfont
+}
+\setbeamertemplate{itemize/enumerate subsubbody begin}{%
+	\wordSize\selectfont
+}
 
 \setbeamertemplate{title page}{%
 	\if\pathToBackground\relax\relax
@@ -279,9 +343,6 @@
 	\else
 		% exist pic background
 		\begin{tikzpicture}[overlay,remember picture]
-			%\node[opacity=1, at=(current page.center)]{%
-			%	\includegraphics[height=\paperheight]{assets/img/background}
-			%};
 			\node[opacity=\titlepageOpacity, at=(current page.center)]{%
 				\includegraphics[height=\paperheight]{\pathToBackground}
 			};
@@ -292,28 +353,47 @@
 	%\begin{picture}(\pageWidth,\pageHeight)(0,0)
 	%	\put(0,10){%
 	\begin{center}
-			\begin{minipage}{0.6\paperwidth}
+            \begin{minipage}{0.6\paperwidth}
 				%\raggedright
 				\center
 				% title
-				{\usebeamerfont{title}\textcolor{black}\inserttitle\par~}
+				{
+                    \usebeamerfont{title}
+                    \textcolor{\beamer@Slide@Titles@color}{%
+                        \inserttitle}
+                   % \par~
+                }
 				% subtitle
 				\ifx\insertsubtitle\empty\else%
 					\\[0.01\paperheight]
-  					{\usebeamerfont{subtitle}\textcolor{black}\insertsubtitle}
+  					{
+                        \usebeamerfont{subtitle}
+                        \textcolor{\beamer@Slide@Titles@color}{%
+                            \insertsubtitle}
+                    }
   				\fi
 				% authors
 				\\[0.02\paperheight]
-  				{\usebeamerfont{author}\textcolor{black}\insertauthor}
+  				{
+                    \usebeamerfont{author}
+                    \textcolor{\beamer@Slide@Titles@color}{%
+                        \insertauthor}
+                }
 				% institutes
   				\ifx\insertinstitute\empty\else%
   					\\[0.02\paperheight]
-  					{\usebeamerfont{institute}\textcolor{black}\insertinstitute}
+  					{
+                        \usebeamerfont{institute}
+                        \textcolor{\beamer@Slide@Titles@color}{%
+                            \insertinstitute}
+                    }
   				\fi
 				% date
   				\ifx\insertdate\empty\else%
   					\\[0.02\paperheight]
-  					\usebeamerfont{date}\textcolor{black}{\insertdate}
+  					\usebeamerfont{date}
+                    \textcolor{\beamer@Slide@Titles@color}{%
+                        \insertdate}
   				\fi
 			\end{minipage}
 	\end{center}
@@ -331,11 +411,6 @@
 					\crule[\beamer@Slide@color]{1.1\paperwidth}{1.1\paperheight}
 				}
 				\put(0.44, 0.1){\pgfuseimage{institution}}
-    			%\put(22, 13){\pgfuseimage{big-logo}}
-    			%\put(24.2, 12.6){%
-				%	\rotatebox{-90}{%
-				%		\textcolor{white}{\Large\bf Better health, better futures}}
-				%}
 			\end{picture}
 		\else
 			% exist pic background
@@ -355,7 +430,8 @@
 		\vspace*{\beamer@Slide@titleheight}
 	\fi
 	\usebeamercolor[fg]{title}%
-	\usebeamerfont{frametitle}\textcolor{black}{\insertframetitle}\vspace*{0.01\paperheight}
+	\usebeamerfont{frametitle}\textcolor{\beamer@Slide@Frametitle@color}{%
+        \insertframetitle}\vspace*{0.01\paperheight}
 }
 
 \setbeamertemplate{footline}{%
@@ -364,9 +440,11 @@
     \begin{center}
 		\hspace*{0.01\paperwidth}
 		\hfill
-		\usebeamerfont{footline}\textcolor{white}{\insertshorttitle}
+		\usebeamerfont{footline}\textcolor{\beamer@Slide@Footline@color}{%
+            \insertshorttitle}
 		\hfill
-		\usebeamerfont{footline}\textcolor{white}{\insertframenumber/\inserttotalframenumber}
+		\usebeamerfont{footline}\textcolor{\beamer@Slide@Footline@color}{%
+            \insertframenumber/\inserttotalframenumber}
 		\hspace*{0.01\paperwidth}
 	\end{center}
 	\fi
