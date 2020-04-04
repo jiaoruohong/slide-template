@@ -175,7 +175,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \pgfdeclareimage[height=0.10\paperheight]{institution}{assets/img/institution}
 \pgfdeclareimage[height=0.10\paperheight]{big-logo}{assets/img/logo}
-\pgfdeclareimage[height=0.04\paperheight]{little-logo}{assets/img/logo}
+\pgfdeclareimage[height=0.05\paperheight]{little-logo}{assets/img/logo}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % DIY Commands
@@ -410,7 +410,7 @@
 				\put(-0.1, -0.1){%
 					\crule[\beamer@Slide@color]{1.1\paperwidth}{1.1\paperheight}
 				}
-				\put(0.44, 0.1){\pgfuseimage{institution}}
+				\put(0.5, 0.1){\pgfuseimage{institution}}
 			\end{picture}
 		\else
 			% exist pic background
@@ -418,7 +418,7 @@
 	\else%
 		\begin{picture}(\pageWidth,\pageHeight)(0,0)
 			\put(-0.1,0){\crule[\beamer@Slide@color]{1.1\paperwidth}{0.05\paperheight}}
-			\put(0, 0){\pgfuseimage{little-logo}}
+			\put(0.5, 0){\pgfuseimage{little-logo}}
    		\end{picture}
    	\fi
 }
