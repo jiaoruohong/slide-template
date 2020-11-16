@@ -9,6 +9,17 @@
 \usepackage{fontawesome}
 \usepackage{ifxetex,ifluatex}
 
+\long\def\beamer@author[#1]#2{%
+  \def\selfinsertauthor{\begin{tabular}[t]{c}#2\end{tabular}}
+  \def\insertauthor{\def\inst{\beamer@insttitle}\def\and{\beamer@andtitle}#2}%
+  \def\beamer@shortauthor{#1}%
+  \ifbeamer@autopdfinfo%
+    \def\beamer@andstripped{}%
+    \beamer@stripands#1 \and\relax
+    {\let\inst=\@gobble\let\thanks=\@gobble\def\and{, }\hypersetup{pdfauthor={\beamer@andstripped}}}
+  \fi%
+}
+
 % hopefully embeds all fonts in pdf
 \ifxetex % xelatex
 	\usepackage{xltxtra,fontspec,xunicode}
@@ -377,7 +388,9 @@
   				{
                     \usebeamerfont{author}
                     \textcolor{\beamer@Slide@Titles@color}{%
-                        \insertauthor}
+                        \insertauthor
+                        \selfinsertauthor
+                    }
                 }
 				% institutes
   				\ifx\insertinstitute\empty\else%
